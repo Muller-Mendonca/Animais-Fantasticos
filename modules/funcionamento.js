@@ -9,10 +9,15 @@ const diasSemana = funcionamento.dataset.semana.split(',').map(Number);
 const horarioSemana = funcionamento.dataset.horario.split(',').map(Number);
 
 const dataAgora = new Date();
-const diasAgora = dataAgora.getDay();
+const diaAgora = dataAgora.getDay();
 const horarioAgora = dataAgora.getHours();
 
-const semanaAberto = diasSemana.indexOf(diasAgora) !== -1;
-console.log(semanaAberto);
+const semanaAberto = diasSemana.indexOf(diaAgora) !== -1;
+const horarioAberto = (horarioAgora >= horarioSemana[0] && horarioAgora < horarioSemana[1])
 
-//PAREI NOS 16 MINUTOS
+if(semanaAberto && horarioAberto){
+    funcionamento.classList.add('aberto');
+}
+
+
+
