@@ -10,7 +10,7 @@ import initAnimaNumeros from './anima-numeros.js';
 import initFuncionamento from './funcionamento.js';
 
 
-const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
+const scrollSuave = new ScrollSuave('[data-menu="smooth"] a[href^="#"]');
 scrollSuave.init();
 
 initAnimationScroll();
