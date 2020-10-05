@@ -2,7 +2,10 @@ export default class initModal{
   constructor(botaoAbrir, botaoFechar, containerModal){
     this.botaoAbrir = document.querySelector(botaoAbrir);
     this.botaoFechar = document.querySelector(botaoFechar);
-    this.containerModal = document.querySelector(botaoFechar);
+    this.containerModal = document.querySelector(containerModal);
+
+    this.eventToggleModal = this.eventToggleModal.bind(this);
+    this.clickForaDoModal = this.clickForaDoModal.bind(this);
   }
 
 
@@ -16,14 +19,14 @@ export default class initModal{
   }
   
   clickForaDoModal(event){
-      if(event.target === this)
-        this.toggleModal(event);
+      if(event.target === this.containerModal)
+        this.toggleModal();
       
   }
 
   addModalEvents(){
-    this.botaoAbrir.addEventListener('click', this.toggleModal);
-    this.botaoFechar.addEventListener('click', this.toggleModal);
+    this.botaoAbrir.addEventListener('click', this.eventToggleModal);
+    this.botaoFechar.addEventListener('click', this.eventToggleModal);
     this.containerModal.addEventListener('click', this.clickForaDoModal);
   }
 
@@ -31,6 +34,7 @@ export default class initModal{
     if(this.botaoAbrir && this.botaoFechar && this.containerModal){
       this.addModalEvents();
     }
+    return this;
   }
 };
 
