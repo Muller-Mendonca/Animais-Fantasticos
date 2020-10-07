@@ -8,6 +8,7 @@ import initMenuMobile from './menu-mobile.js';
 import initAnimaNumeros from './anima-numeros.js';
 import initFuncionamento from './funcionamento.js';
 import initAnimationScroll from './scroll-animacao.js';
+import initFechAnimais from './fetch-animais.js';
 
 
 const scrollSuave = new ScrollSuave('[data-menu="smooth"] a[href^="#"]');
@@ -30,3 +31,4 @@ initMenuMobile();
 initAnimaNumeros();
 initFuncionamento();
 initAnimationScroll();
+initFechAnimais();
