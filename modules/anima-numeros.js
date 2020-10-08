@@ -2,7 +2,7 @@ export default class AnimaNumeros{
     constructor(numeros, observerTarget, observerClass){
         this.numeros = document.querySelectorAll(numeros);
         this.observerTarget = document.querySelector(observerTarget);
-        this.observerClass = this.observerClass;
+        this.observerClass = observerClass;
 
         this.handleMutation = this.handleMutation.bind(this);
     }
@@ -23,8 +23,6 @@ export default class AnimaNumeros{
     }
 
     animaNumeros(){
-      // '[data-numero]' '.numeros' "setativo";
-        
         this.numeros.forEach(numero =>{this.constructor.incrementarNumero(numero);});
       }
       
